@@ -3,6 +3,7 @@
 # pip install yfinance
 import yfinance as yf
 
+
 # first sample
 # 엔비디아 주식 데이터 다운로드
 nvidia = "NVDA"
@@ -12,6 +13,7 @@ nvda = yf.Ticker(nvidia)
 nvda_data_1y = nvda.history(period="1y")
 nvda_data_5y = nvda.history(period="5y")
 
+
 # 만약 1년전과 5년전에 투자했을 시, 현재 수익률
 # 수익률 계산 및 출력(%) 함수
 def calbenefit(data):
@@ -20,13 +22,13 @@ def calbenefit(data):
     return_rate = ((end_price - start_price) / start_price) * 100
     return print("수익률",return_rate,"%")
 
-# 엔비디아의 1년 및 5년 수익률 계산
-calbenefit(nvda_data_1y)
 
+# 엔비디아의 1년, 5년 투자수익률 계산
+calbenefit(nvda_data_1y)
 calbenefit(nvda_data_5y)
 
 
-
+# second sample
 # AMD 주식 데이터를 다운로드
 
 amd = yf.Ticker("AMD")
@@ -35,6 +37,6 @@ amd = yf.Ticker("AMD")
 amd_data_1y = amd.history(period="1y")
 amd_data_5y = amd.history(period="5y")
 
-# AMD의 1년 및 5년 수익률 계산
+# AMD의 1년, 5년 투자수익률 계산
 calbenefit(amd_data_1y)
 calbenefit(amd_data_5y)
